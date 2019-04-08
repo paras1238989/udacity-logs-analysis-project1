@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+# Paras Agarkar
+# Udacity Project -1 Log analysis
 #! /usr/bin/env python
 import psycopg2
 
