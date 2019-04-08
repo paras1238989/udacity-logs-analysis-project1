@@ -1,0 +1,17 @@
+
+1. The 3 most popular articles of all time are:
+
+	338647 - /article/candidate-is-jerk views
+	253801 - /article/bears-love-berries views
+	170098 - /article/bad-things-gone views
+
+2. The most popular article authors of all time are:
+
+	Ursula La Multa - 507594 views
+	Rudolf von Treppenwitz - 423457 views
+	Anonymous Contributor - 170098 views
+
+3. Days with more than 1% of request that lead to an error:
+
+	2016-07-17 - 2.2627 %
+
