@@ -35,4 +35,4 @@ Vagrant
                                             ORDER BY views desc
                                             LIMIT 3;
 10. run the main.py file using : python main.py
-11. The result similar to the output.txt will be displayed on the screen.
+11. The result similar to the output.txt will be displayed on the screen. 
