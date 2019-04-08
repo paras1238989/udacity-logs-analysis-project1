@@ -26,5 +26,13 @@ Vagrant
 5. Download data for the Database from https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 6. Extract the above data and import it in the database using : psql -d news -f newsdata.sql
 7. Clone this git repository using : git clone https://github.com/paras1238989/udacity-logs-analysis-project1.git
-8. run the main.py file using : python main.py
-9. The result similar to the output.txt will be displayed on the screen.
+8. Connect to news database using :psql news
+9. Create a new view in the database using: 
+                                            SELECT author.name, sum(view.num) AS views 
+                                            FROM popularity_view AS view, authors AS author
+                                            WHERE author.id=view.author 
+                                            GROUP BY author.name 
+                                            ORDER BY views desc
+                                            LIMIT 3;
+10. run the main.py file using : python main.py
+11. The result similar to the output.txt will be displayed on the screen.
