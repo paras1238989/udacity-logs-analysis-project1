@@ -18,3 +18,11 @@ PostgreSQL
 Git
 Vagrant
 
+# Steps to run the program
+1. Download and install Vagrant and VirtualBox.
+2. Files for vagrant can be downloaded from https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip - This will help you install PostgreSQL, Python and other dependencies on the VM.
+3. Start the Ubuntu Virtual Machine(VM) using : vagrant up
+4. Connect to the Ubuntu VM using : vagrant ssh
+5. Download data for the Database from https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+6. Extract the above data and import it in the database using : psql -d news -f newsdata.sql
+7. Clone this git repository using : 
