@@ -28,11 +28,12 @@ Vagrant
 7. Clone this git repository using : git clone https://github.com/paras1238989/udacity-logs-analysis-project1.git
 8. Connect to news database using :psql news
 9. Create a new view in the database using: 
-                                            SELECT author.name, sum(view.num) AS views 
-                                            FROM popularity_view AS view, authors AS author
-                                            WHERE author.id=view.author 
-                                            GROUP BY author.name 
-                                            ORDER BY views desc
-                                            LIMIT 3;
+                                            CREATE VIEW popularity_view AS (
+					    SELECT title, author, count(*) as num 
+					    FROM articles,log 
+					    WHERE log.path=CONCAT('/article/',articles.slug) 
+					    GROUP BY articles.title,articles.author 
+					    ORDER BY num DESC
+					    );
 10. run the main.py file using : python main.py
 11. The result similar to the output.txt will be displayed on the screen. 

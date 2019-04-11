@@ -11,12 +11,12 @@ import psycopg2
 DBNAME = "news"
 
 
-def make_query(query):
+def execute_query(query):
     ''' Makes a query to the news database '''
     db = psycopg2.connect(database=DBNAME)
-    c = db.cursor()
-    c.execute(query)
-    return c.fetchall()
+    cursor = db.cursor()
+    cursor.execute(query)
+    return cursor.fetchall()
     db.close()
 
 
@@ -48,21 +48,21 @@ WHERE error > 1; '''
 
 
 def print_query1_result(query):
-    results = make_query(query)
+    results = execute_query(query)
     print('\n1. The 3 most popular articles of all time are:\n')
     for result in results:
         print ('\t' + str(result[0]) + ' - ' + str(result[1]) + ' views')
 
 
 def print_query2_result(query):
-    results = make_query(query)
+    results = execute_query(query)
     print('\n2. The most popular article authors of all time are:\n')
     for result in results:
         print ('\t' + str(result[0]) + ' - ' + str(result[1]) + ' views')
 
 
 def print_query3_result(query):
-    results = make_query(query)
+    results = execute_query(query)
     print('\n3. Days with more than 1% of request that lead to an error:\n')
     for result in results:
         print ('\t' + str(result[0]) + ' - ' + str(result[1]) + ' %')
