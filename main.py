@@ -21,10 +21,10 @@ def execute_query(query):
 
 
 # What are the most popular three articles of all time?
-query1 = ''' SELECT count(*) AS count, path
-FROM log
-WHERE path LIKE '%article%'
-GROUP BY path
+query1 = ''' SELECT articles.title,count(*) AS count
+FROM articles JOIN log
+ON log.path LIKE concat('/article/%', articles.slug)
+GROUP BY articles.title
 ORDER BY count DESC
 LIMIT 3; '''
 
